@@ -1,16 +1,46 @@
-# flexypos_android
+# Flexypos — Multi-tenant POS & Laundry SaaS
 
-A new Flutter project.
+**Tech Stack:** Flutter (Dart) • Node.js/Express • MySQL • Nginx/SSL  
+**Focus:** Multi-tenant data isolation, CRUD modules, sync-ready architecture, production deployment
 
-## Getting Started
+## Overview
+Flexypos is a B2B SaaS platform for POS (Retail) and Laundry operations. It includes client apps and backend services designed with strict tenant scoping and operational reliability.
 
-This project is a starting point for a Flutter application.
+## Key Features
+- Multi-tenant scoping (account-level + business-unit scope)
+- CRUD modules with soft delete and audit-safe filtering
+- Sync-ready patterns (delta/updated_since, LWW upsert, tombstones) *(if applicable)*
+- Deployment behind Nginx reverse proxy with HTTPS
 
-A few resources to get you started if this is your first Flutter project:
+## Architecture
+- `apps/` (Flutter clients)
+- `api/` (Node.js/Express services)
+- `db/` (MySQL schema/migrations)
+- `deploy/` (Nginx configs, service scripts)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots / Demo
+- Screenshots: `/docs/screenshots`
+- Demo link: (optional)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Getting Started (Local)
+### Requirements
+- Node.js >= XX
+- Flutter >= XX
+- MySQL >= XX
+
+### Setup
+1. Copy environment template:
+   - `cp .env.example .env`
+2. Install dependencies:
+   - `npm install` (API)
+   - `flutter pub get` (App)
+3. Run API:
+   - `npm run dev`
+4. Run Flutter:
+   - `flutter run`
+
+## Environment Variables
+See `.env.example`.
+
+## License
+(Choose a license or state: “All rights reserved”)

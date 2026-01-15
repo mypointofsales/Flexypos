@@ -1,46 +1,49 @@
-# Flexypos — Multi-tenant POS & Laundry SaaS
+# Flexypos — POS & Laundry (Flutter Client)
 
-**Tech Stack:** Flutter (Dart) • Node.js/Express • MySQL • Nginx/SSL  
-**Focus:** Multi-tenant data isolation, CRUD modules, sync-ready architecture, production deployment
+**Tech Stack (this repo):** Flutter (Dart)  
+**Backend (separate service):** Node.js/Express • MySQL • Nginx/SSL *(kept in a separate repository / deployment)*  
+**Focus:** B2B operations, multi-tenant ready UI, CRUD workflows, sync-ready integration
+
+---
 
 ## Overview
-Flexypos is a B2B SaaS platform for POS (Retail) and Laundry operations. It includes client apps and backend services designed with strict tenant scoping and operational reliability.
+Flexypos is a B2B platform for **POS (Retail)** and **Laundry** operations.  
+This repository contains the **Flutter client application** (Android/iOS/Web/Desktop). The backend/API and deployment configuration are managed separately.
 
-## Key Features
-- Multi-tenant scoping (account-level + business-unit scope)
-- CRUD modules with soft delete and audit-safe filtering
-- Sync-ready patterns (delta/updated_since, LWW upsert, tombstones) *(if applicable)*
-- Deployment behind Nginx reverse proxy with HTTPS
+---
 
-## Architecture
-- `apps/` (Flutter clients)
-- `api/` (Node.js/Express services)
-- `db/` (MySQL schema/migrations)
-- `deploy/` (Nginx configs, service scripts)
+## What’s inside this repository
+- Flutter client app (UI + business flows)
+- Multi-platform targets: Android, iOS, Web, Windows, macOS, Linux *(depending on your environment)*
+- Assets and app resources
 
-## Screenshots / Demo
-- Screenshots: `/docs/screenshots`
-- Demo link: (optional)
+---
+
+## Key Capabilities (Client)
+- Authentication & tenant-aware navigation *(depends on API integration)*
+- CRUD workflows for operational modules (e.g., products/services/customers/orders)
+- Prepared for sync-ready patterns (e.g., delta updates / LWW) when connected to backend services
+
+> Note: Backend services (API, database schema, Nginx deployment) are not included in this public repository.
+
+---
+
+## Repository Structure
+- `lib/` — main Flutter app source
+- `assets/` — images/fonts/resources
+- `test/` — unit/widget tests
+- `android/`,  `web/`, `windows/` — platform scaffolding
+
+---
 
 ## Getting Started (Local)
+
 ### Requirements
-- Node.js >= XX
-- Flutter >= XX
-- MySQL >= XX
+- Flutter SDK (latest stable recommended)
+- Dart (comes with Flutter)
+- Android Studio / Xcode (for mobile) or relevant desktop toolchain
 
 ### Setup
-1. Copy environment template:
-   - `cp .env.example .env`
-2. Install dependencies:
-   - `npm install` (API)
-   - `flutter pub get` (App)
-3. Run API:
-   - `npm run dev`
-4. Run Flutter:
-   - `flutter run`
-
-## Environment Variables
-See `.env.example`.
-
-## License
-(Choose a license or state: “All rights reserved”)
+```bash
+flutter pub get
+flutter run
